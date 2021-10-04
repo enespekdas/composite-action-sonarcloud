@@ -1,0 +1,1 @@
+Sonarcloud Üzerinde kod analizi yapılmaktadır.
