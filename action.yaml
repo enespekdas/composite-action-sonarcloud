@@ -35,5 +35,5 @@ runs:
           -Dsonar.projectKey=${{ inputs.SonarCloud_Project_Key }}
           -Dsonar.organization=${{ inputs.SonarCloud_Organizaton_Name }}
         env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ inputs.SONAR_TOKEN }}
