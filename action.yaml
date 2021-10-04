@@ -1,0 +1,28 @@
+name: 'The code is analyzing from sonarcloud'
+description: ' The code will analyze from sonarcloud.'
+inputs:
+  SonarCloud_Project_Key:  # path
+    description: 'Sonarcloud Project_Key '
+    required: true
+    default: 'enespekdas_ms-ratings-web-master'
+  SonarCloud_Organizaton_Name:  # path
+      description: 'Sonarcloud Organization Name '
+      required: true
+      default: 'enespekdas'
+outputs:
+  Result: 
+    description: "Sonarcloud Result"
+    value: "Sonarcloud Analyze finished."
+runs:
+  using: "composite"
+  steps: 
+    - name: Repository Files are downloading
+      uses: actions/checkout@v2
+    - run: pwd 
+      shell: bash
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      with:
+        args: >
+          -Dsonar.projectKey=${{ inputs.SonarCloud_Project_Key }}
+          -Dsonar.organization=${{ inputs.SonarCloud_Organizaton_Name }}
