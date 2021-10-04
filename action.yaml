@@ -9,6 +9,14 @@ inputs:
       description: 'Sonarcloud Organization Name '
       required: true
       default: 'enespekdas'
+  SONAR_TOKEN:  # path
+      description: 'Sonarcloud get project token '
+      required: true
+      default: 'dd'
+  GITHUB_TOKEN:  # path  
+      description: 'Github get Token '
+      required: true
+      default: 'dd'
 outputs:
   Result: 
     description: "Sonarcloud Result"
